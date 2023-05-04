@@ -1,0 +1,56 @@
+{
+  "name": "scss-variable-autocomplete",
+  "displayName": "scss-variable-autocomplete",
+  "description": "支持动态解析scss文件中的全局变量，并在开发时给予提示",
+  "version": "1.0.3",
+  "publisher": "sailei",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/icon.png",
+  "activationEvents": [
+    "onLanguage:scss"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": [
+      {
+        "title": "scss file path",
+        "properties": {
+          "scssFilePath": {
+            "type": "string",
+            "description": "请输入要解析的scss文件，多个文件中间以分号结尾。如 public.scss;variable.scss "
+          }
+        }
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rain-1214/vue-scss-variable-scan"
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.77.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
