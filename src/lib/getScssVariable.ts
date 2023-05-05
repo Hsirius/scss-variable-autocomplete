@@ -12,7 +12,7 @@ export async function getScssVariable() {
     let res = [];
     for (let i = 0; i < filePath.length; i++) {
       const item = filePath[i];
-      const paths = await workspace.findFiles(`*/${item}`, "/node_modules/");
+      const paths = await workspace.findFiles(`**/${item}`, "/node_modules/");
       if (!paths || paths.length === 0) {
         return [];
       }
